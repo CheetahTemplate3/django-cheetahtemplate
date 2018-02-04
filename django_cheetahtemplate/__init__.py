@@ -58,10 +58,13 @@ class DjangoCheetahTemplate(BaseEngine):
                 with open(compiled_template, 'wt') as pyfile:
                     pyfile.write(template.generatedModuleCode())
             except IOError:  # Write failed - ignore the error
-                pass
+                return CheetahTemplate(Template, template_full_path)
             else:
                 py_compile.compile(compiled_template)
-            return CheetahTemplate(Template, template_full_path)
+                template_mod = load_source(
+                    template_name_base, compiled_template)
+                return CheetahTemplate(
+                    getattr(template_mod, template_name_base))
 
 
 class CheetahTemplate(object):
