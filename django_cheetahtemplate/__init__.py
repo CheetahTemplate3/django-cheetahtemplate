@@ -27,7 +27,7 @@ class DjangoCheetahTemplate(BaseEngine):
 
     def from_string(self, template_code):
         try:
-            return CheetahTemplate(Template(source=template_code))
+            return CheetahTemplate(Template.compile(source=template_code))
         except ParseError as exc:
             raise TemplateSyntaxError(exc.args)
 
@@ -48,7 +48,10 @@ class DjangoCheetahTemplate(BaseEngine):
             template_mod = load_source(template_name_base, compiled_template)
             return CheetahTemplate(getattr(template_mod, template_name_base))
         try:
-            template = Template(file=template_full_path)
+            templateClass = Template.compile(
+                file=template_full_path,
+                moduleName=template_name_base,
+            )
         except IOError as exc:
             raise TemplateDoesNotExist(exc.args, backend=self)
         except ParseError as exc:
@@ -56,9 +59,9 @@ class DjangoCheetahTemplate(BaseEngine):
         else:
             try:
                 with open(compiled_template, 'wt') as pyfile:
-                    pyfile.write(template.generatedModuleCode())
+                    pyfile.write(templateClass().generatedModuleCode())
             except IOError:  # Write failed - ignore the error
-                return CheetahTemplate(Template, template_full_path)
+                return CheetahTemplate(templateClass)
             else:
                 py_compile.compile(compiled_template)
                 template_mod = load_source(
@@ -69,9 +72,8 @@ class DjangoCheetahTemplate(BaseEngine):
 
 class CheetahTemplate(object):
 
-    def __init__(self, template, source=None):
-        self.template = template
-        self.source = source
+    def __init__(self, templateClass):
+        self.templateClass = templateClass
 
     def render(self, context=None, request=None):
         if context is None:
@@ -80,8 +82,5 @@ class CheetahTemplate(object):
             context['request'] = request
             context['csrf_input'] = csrf_input_lazy(request)
             context['csrf_token'] = csrf_token_lazy(request)
-        if self.source:
-            template = self.template(file=self.source, searchList=[context])
-        else:
-            template = self.template(searchList=[context])
+        template = self.templateClass(searchList=[context])
         return template.respond()
