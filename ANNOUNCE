@@ -1,0 +1,23 @@
+Django-CheetahTemplate: Use CheetahTemplate3 in Django.
+
+
+Version 0.0.1 (2018-01-04)
+
+   Initial release.
+
+
+WHERE TO GET
+   Home Page:     https://github.com/CheetahTemplate3/django-cheetahtemplate
+   PyPI:          https://pypi.python.org/pypi/django-cheetahtemplate
+
+   Requires: Python 2.7 or Python 3.4+.
+
+
+AUTHOR
+   Oleg Broytman <phd@phdru.name>
+
+COPYRIGHT
+   Copyright (C) 2018 PhiloSoft Design.
+
+LICENSE
+   MIT

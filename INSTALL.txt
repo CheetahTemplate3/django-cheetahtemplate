@@ -1,0 +1,36 @@
+django-cheetahtemplate requires Python2.7 or 3.4+.
+
+Installation script setup.py requires setuptools.
+
+Installation using pip:
+
+    System-wide:
+
+    sudo pip install django-cheetahtemplate
+
+    User mode:
+
+    pip install --user django-cheetahtemplate
+
+    Virtual envs:
+
+    pip install django-cheetahtemplate
+
+Installation from sources:
+
+    To install the program from sources system-wide run run the following
+    command:
+
+    sudo python setup.py install
+
+    If you don't want to install it system-wide you can install it in your
+    home directory; run run the following command:
+
+    python setup.py install --user
+
+    Virtual envs:
+
+    python setup.py install
+
+Option '--user' installs library parts into
+$HOME/.local/lib/python$MAJOR.$MINOR/site-packages/.
