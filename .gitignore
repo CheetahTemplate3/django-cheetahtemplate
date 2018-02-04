@@ -1,0 +1,10 @@
+/.cache/
+/.tox/
+/django-cheetahtemplate.egg-info/
+/build/
+/data/
+/dist/
+/MANIFEST
+*.py[co]
+*.tmp
+*~
