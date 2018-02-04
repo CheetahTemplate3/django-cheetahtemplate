@@ -18,7 +18,7 @@ if is_setuptools:
     kw['python_requires'] = '>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*'
 
 setup(name='django-cheetahtemplate',
-      version='0.0.2',
+      version='0.0.3',
       description='Use CheetahTemplate3 in Django',
       long_description=open('README.rst', 'rU').read(),
       author='Oleg Broytman',
