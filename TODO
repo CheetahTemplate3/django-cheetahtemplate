@@ -1,6 +1,4 @@
 Example:
-   Get the $name from URL: /?name=name.
-
    Simple undecorated template (will be used for tests).
 
 

@@ -2,5 +2,5 @@ from django.conf.urls import url
 from .views import IndexView
 
 urlpatterns = [
-    url('', IndexView.as_view()),
+    url('(?P<name>.*)', IndexView.as_view()),
 ]
