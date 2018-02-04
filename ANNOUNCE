@@ -1,5 +1,12 @@
-Django-CheetahTemplate: Use CheetahTemplate3 in Django.
+WHAT IS Django-CheetahTemplate
+   Use CheetahTemplate3 in Django.
 
+
+WHAT'S NEW
+
+Version 0.0.2 (2018-01-04)
+
+   Write generated code to .py file and byte-compile the file.
 
 Version 0.0.1 (2018-01-04)
 
