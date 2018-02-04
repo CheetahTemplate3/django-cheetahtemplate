@@ -1,0 +1,5 @@
+--install-option=-O2
+
+Django >1.11, <2; python_version=='2.7'
+Django >=2; python_version>='3.4'
+Cheetah3
