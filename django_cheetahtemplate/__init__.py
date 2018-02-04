@@ -4,6 +4,7 @@ django-cheetahtemplate
 
 from imp import load_source
 import os
+import py_compile
 
 from Cheetah.Parser import ParseError
 from Cheetah.Template import Template
@@ -47,12 +48,20 @@ class DjangoCheetahTemplate(BaseEngine):
             template_mod = load_source(template_name_base, compiled_template)
             return CheetahTemplate(getattr(template_mod, template_name_base))
         try:
-            Template(file=template_full_path)
+            template = Template(file=template_full_path)
         except IOError as exc:
             raise TemplateDoesNotExist(exc.args, backend=self)
         except ParseError as exc:
             raise TemplateSyntaxError(exc.args)
-        return CheetahTemplate(Template, template_full_path)
+        else:
+            try:
+                with open(compiled_template, 'wt') as pyfile:
+                    pyfile.write(template.generatedModuleCode())
+            except IOError:  # Write failed - ignore the error
+                pass
+            else:
+                py_compile.compile(compiled_template)
+            return CheetahTemplate(Template, template_full_path)
 
 
 class CheetahTemplate(object):
