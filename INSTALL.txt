@@ -1,4 +1,4 @@
-django-cheetahtemplate requires Python2.7 or 3.4+.
+django-cheetahtemplate requires Python 2.7 or 3.4+.
 
 Installation script setup.py requires setuptools.
 
