@@ -1,0 +1,4 @@
+#! /bin/sh
+
+DJANGO_SETTINGS_MODULE=example.settings_nocache \
+   exec "`dirname \"$0\"`"/manage.py "$@"

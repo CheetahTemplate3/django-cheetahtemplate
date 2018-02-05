@@ -23,7 +23,7 @@ class DjangoCheetahTemplate(BaseEngine):
     def __init__(self, params):
         params = params.copy()
         options = params.pop('OPTIONS')
-        self.cacheModule = options.get('cacheModule')
+        self.cacheModules = options.get('cacheModules', True)
         super(DjangoCheetahTemplate, self).__init__(params)
 
     def from_string(self, template_code):
@@ -58,7 +58,7 @@ class DjangoCheetahTemplate(BaseEngine):
         except ParseError as exc:
             raise TemplateSyntaxError(exc.args)
         else:
-            if not self.cacheModule:
+            if not self.cacheModules:
                 return CheetahTemplate(templateClass)
             try:
                 with open(generated_template, 'wt') as pyfile:
