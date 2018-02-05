@@ -1,6 +1,8 @@
 Version 0.0.4 (2018-02-??)
 
-   Simple undecorated template (will be used for tests).
+   Option ``cacheModule`` to not cache generated templates in .py files.
+
+   Simple undecorated template (used for tests).
 
 Version 0.0.3 (2018-02-05)
 

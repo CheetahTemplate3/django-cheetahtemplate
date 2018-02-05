@@ -22,7 +22,8 @@ class DjangoCheetahTemplate(BaseEngine):
 
     def __init__(self, params):
         params = params.copy()
-        del params['OPTIONS']
+        options = params.pop('OPTIONS')
+        self.cacheModule = options.get('cacheModule')
         super(DjangoCheetahTemplate, self).__init__(params)
 
     def from_string(self, template_code):
@@ -40,12 +41,12 @@ class DjangoCheetahTemplate(BaseEngine):
         template_dirname = os.path.dirname(template_full_path)
         template_name_base = \
             os.path.splitext(os.path.basename(template_name))[0]
-        compiled_template = os.path.join(template_dirname,
-                                         template_name_base + '.py')
-        if os.path.exists(compiled_template) and \
-                (os.path.getmtime(compiled_template) >=
+        generated_template = os.path.join(template_dirname,
+                                          template_name_base + '.py')
+        if os.path.exists(generated_template) and \
+                (os.path.getmtime(generated_template) >=
                  os.path.getmtime(template_full_path)):
-            template_mod = load_source(template_name_base, compiled_template)
+            template_mod = load_source(template_name_base, generated_template)
             return CheetahTemplate(getattr(template_mod, template_name_base))
         try:
             templateClass = Template.compile(
@@ -57,15 +58,17 @@ class DjangoCheetahTemplate(BaseEngine):
         except ParseError as exc:
             raise TemplateSyntaxError(exc.args)
         else:
+            if not self.cacheModule:
+                return CheetahTemplate(templateClass)
             try:
-                with open(compiled_template, 'wt') as pyfile:
+                with open(generated_template, 'wt') as pyfile:
                     pyfile.write(templateClass().generatedModuleCode())
             except IOError:  # Write failed - ignore the error
                 return CheetahTemplate(templateClass)
             else:
-                py_compile.compile(compiled_template)
+                py_compile.compile(generated_template)
                 template_mod = load_source(
-                    template_name_base, compiled_template)
+                    template_name_base, generated_template)
                 return CheetahTemplate(
                     getattr(template_mod, template_name_base))
 
