@@ -13,3 +13,7 @@ class IndexView(TemplateView):
     def get(self, request, name=None):
         context = self.get_context_data(name=name)
         return self.render_to_response(context)
+
+
+class SimpleView(IndexView):
+    template_name = "simple/index.tmpl"

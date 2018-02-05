@@ -6,17 +6,9 @@ CheetahTemplate3 in Django.
 
 WHAT'S NEW
 
-Version 0.0.3 (2018-01-05)
+Version 0.0.4 (2018-02-??)
 
-   Compile template with the given class name.
-
-Version 0.0.2 (2018-01-04)
-
-   Write generated code to .py file and byte-compile the file.
-
-Version 0.0.1 (2018-01-04)
-
-   Initial release.
+   Simple undecorated template (will be used for tests).
 
 
 WHERE TO GET
