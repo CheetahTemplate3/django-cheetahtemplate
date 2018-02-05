@@ -11,6 +11,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+    'example',
 ]
 
 MIDDLEWARE = [
@@ -23,7 +24,6 @@ TEMPLATES = [
         'APP_DIRS': True,
         'BACKEND': 'django_cheetahtemplate.DjangoCheetahTemplate',
         'DIRS': [
-            os.path.join(BASE_DIR, 'example', 'cheetahtemplate')
         ],
         'OPTIONS': {
         },
