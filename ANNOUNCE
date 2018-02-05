@@ -1,21 +1,25 @@
+Hello! Django-CheetahTemplate version 0.2.
+
 WHAT IS Django-CheetahTemplate
 
 Django-CheetahTemplate is a Django template backend to use
-CheetahTemplate3 in Django.
+CheetahTemplate3 in Django. It's a brand new project created for the new
+custom Django template backends API.
+
+It works with Python 2.7 or Python 3.4+, Django 1.11 and 2+,
+CheetahTemplate3.
 
 
 WHAT'S NEW
 
 Version 0.2.0 (2018-02-05)
 
-   Tests. CI.
+   The first public release.
 
 
 WHERE TO GET
    Home Page:     https://github.com/CheetahTemplate3/django-cheetahtemplate
    PyPI:          https://pypi.python.org/pypi/django-cheetahtemplate
-
-   Requires: Python 2.7 or Python 3.4+.
 
 
 AUTHOR
