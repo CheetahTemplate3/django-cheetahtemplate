@@ -6,6 +6,8 @@ Version 0.0.4 (2018-02-05)
 
    Simple undecorated template (used for tests).
 
+   Tests in example app.
+
 Version 0.0.3 (2018-02-05)
 
    Compile template with the given class name
