@@ -1,4 +1,4 @@
-Hello! Django-CheetahTemplate version 0.2.
+Hello! Django-CheetahTemplate version 0.3.
 
 WHAT IS Django-CheetahTemplate
 
@@ -12,9 +12,11 @@ CheetahTemplate3.
 
 WHAT'S NEW
 
-Version 0.2.0 (2018-02-05)
+Version 0.3.0 (2018-02-06)
 
-   The first public release.
+   Rename ``cacheModule`` to ``cacheModules``.
+
+   Set ``cacheModules`` defaults to True.
 
 
 WHERE TO GET
