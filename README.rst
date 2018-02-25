@@ -10,7 +10,9 @@ It works with Python 2.7 or Python 3.4+, Django 1.11 and 2+,
 CheetahTemplate3.
 
 Install ``django-cheetahtemplate``. Add or change TEMPLATES in
-``settings.py`` the following way::
+``settings.py`` the following way:
+
+.. code-block:: python
 
     TEMPLATES = [
         {
