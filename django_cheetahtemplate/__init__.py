@@ -62,7 +62,7 @@ class DjangoCheetahTemplate(BaseEngine):
                 return CheetahTemplate(templateClass)
             try:
                 with open(generated_template, 'wt') as pyfile:
-                    pyfile.write(templateClass().generatedModuleCode())
+                    pyfile.write(templateClass._CHEETAH_generatedModuleCode)
             except IOError:  # Write failed - ignore the error
                 return CheetahTemplate(templateClass)
             else:
