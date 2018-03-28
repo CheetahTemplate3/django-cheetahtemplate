@@ -1,21 +1,6 @@
 #!/usr/bin/env python
 
-try:
-    from setuptools import setup
-    is_setuptools = True
-except ImportError:
-    from distutils.core import setup
-    is_setuptools = False
-
-kw = {}
-if is_setuptools:
-    kw['install_requires'] = [
-        "Django >1.11, <2; python_version=='2.7'",
-        "Django >=2; python_version>='3.4'",
-        "Cheetah3",
-    ]
-
-    kw['python_requires'] = '>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*'
+from setuptools import setup
 
 setup(name='django-cheetahtemplate',
       version='0.3.0',
@@ -50,6 +35,11 @@ setup(name='django-cheetahtemplate',
         'Topic :: Text Processing',
       ],
       packages=['django_cheetahtemplate'],
+      python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
       requires=['Django', 'Cheetah3'],
-      **kw
+      install_requires=[
+          "Django >1.11, <2; python_version=='2.7'",
+          "Django >=2; python_version>='3.4'",
+          "Cheetah3",
+      ],
       )
