@@ -9,6 +9,14 @@ setup(name='django-cheetahtemplate',
       author='Oleg Broytman',
       author_email='phd@phdru.name',
       url='https://github.com/CheetahTemplate3/django-cheetahtemplate',
+      project_urls={
+          'Download': 'https://pypi.python.org/pypi/django-cheetahtemplate',
+          'Github repo':
+              'https://github.com/CheetahTemplate3/django-cheetahtemplate',
+          'Issue tracker':
+              'https://github.com/CheetahTemplate3'
+              '/django-cheetahtemplate/issues',
+      },
       license='MIT',
       platforms='Any',
       keywords=["cheetah", "django", "template"],
