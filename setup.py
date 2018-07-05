@@ -12,7 +12,7 @@ setup(
     author_email='phd@phdru.name',
     url='https://github.com/CheetahTemplate3/django-cheetahtemplate',
     project_urls={
-        'Download': 'https://pypi.python.org/pypi/django-cheetahtemplate',
+        'Download': 'https://pypi.org/pypi/django-cheetahtemplate',
         'Github repo':
             'https://github.com/CheetahTemplate3/django-cheetahtemplate',
         'Issue tracker':
