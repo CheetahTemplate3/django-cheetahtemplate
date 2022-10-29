@@ -4,9 +4,9 @@ from setuptools import setup
 
 setup(
     name='django-cheetahtemplate',
-    version='0.3.0',
+    version='0.4.0',
     description='Use CheetahTemplate3 in Django',
-    long_description=open('README.rst', 'rU').read(),
+    long_description=open('README.rst', 'r').read(),
     long_description_content_type="text/x-rst",
     author='Oleg Broytman',
     author_email='phd@phdru.name',
@@ -38,6 +38,9 @@ setup(
       'Programming Language :: Python :: 3.6',
       'Programming Language :: Python :: 3.7',
       'Programming Language :: Python :: 3.8',
+      'Programming Language :: Python :: 3.9',
+      'Programming Language :: Python :: 3.10',
+      'Programming Language :: Python :: 3.11',
       'Topic :: Internet :: WWW/HTTP',
       'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
       'Topic :: Internet :: WWW/HTTP :: Site Management',
@@ -48,11 +51,11 @@ setup(
     ],
     packages=['django_cheetahtemplate'],
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
-    requires=['Django', 'Cheetah3'],
+    requires=['Django', 'CT3'],
     install_requires=[
         "Django >1.11, <2; python_version=='2.7'",
         "Django >=2, <2.1; python_version=='3.4'",
         "Django >=2.2.24; python_version>='3.5'",
-        "Cheetah3",
+        "CT3 >=3.3",
     ],
 )
