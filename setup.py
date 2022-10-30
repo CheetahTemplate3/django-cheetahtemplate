@@ -55,7 +55,7 @@ setup(
     install_requires=[
         "Django >1.11, <2; python_version=='2.7'",
         "Django >=2, <2.1; python_version=='3.4'",
-        "Django >=2.2.24; python_version>='3.5'",
+        "Django >=2.2.25; python_version>='3.5'",
         "CT3 >=3.3",
     ],
 )
