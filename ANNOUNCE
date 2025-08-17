@@ -12,7 +12,11 @@ CheetahTemplate3.
 
 WHAT'S NEW
 
-Version 0.4.0 (2022-??-??)
+Version 0.4.0.post1 (2025-??-??)
+
+   Python 3.12, 3.13, 3.14.
+
+Version 0.4.0 (2022-10.30)
 
    Migrate to Github Actions.
 
@@ -28,7 +32,7 @@ AUTHOR
    Oleg Broytman <phd@phdru.name>
 
 COPYRIGHT
-   Copyright (C) 2018-2022 PhiloSoft Design.
+   Copyright (C) 2018-2025 PhiloSoft Design.
 
 LICENSE
    MIT

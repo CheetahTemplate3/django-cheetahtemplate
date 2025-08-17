@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='django-cheetahtemplate',
-    version='0.4.0',
+    version='0.4.0.post1',
     description='Use CheetahTemplate3 in Django',
     long_description=open('README.rst', 'r').read(),
     long_description_content_type="text/x-rst",
@@ -41,6 +41,9 @@ setup(
       'Programming Language :: Python :: 3.9',
       'Programming Language :: Python :: 3.10',
       'Programming Language :: Python :: 3.11',
+      'Programming Language :: Python :: 3.12',
+      'Programming Language :: Python :: 3.13',
+      'Programming Language :: Python :: 3.14',
       'Topic :: Internet :: WWW/HTTP',
       'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
       'Topic :: Internet :: WWW/HTTP :: Site Management',

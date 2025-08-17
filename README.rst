@@ -31,7 +31,7 @@ applications. See
 
 Author: Oleg Broytman <phd@phdru.name>.
 
-Copyright (C) 2018-2022 PhiloSoft Design.
+Copyright (C) 2018-2025 PhiloSoft Design.
 
 License: MIT.
 
