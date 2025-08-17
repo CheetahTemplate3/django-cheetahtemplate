@@ -2,6 +2,8 @@ Version 0.4.0.post1 (2025-??-??)
 
    Python 3.12, 3.13, 3.14.
 
+   Tests(GHActions): Install all Python versions from ``conda-forge``.
+
 Version 0.4.0 (2022-10.30)
 
    Migrate to Github Actions.
